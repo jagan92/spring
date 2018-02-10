@@ -4,7 +4,7 @@
   version="2.0">
   <persistence-unit name="punit" transaction-type="RESOURCE_LOCAL">
     <properties>
-      <property name="hibernate.ejb.interceptor" value="com.sdconnexion.interceptors.StaticDelegateInterceptor" />
+<!--       <property name="hibernate.ejb.interceptor" value="com.sdconnexion.interceptors.StaticDelegateInterceptor" /> -->
     </properties>
   </persistence-unit>
 </persistence>

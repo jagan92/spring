@@ -412,7 +412,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>sdconnexion</finalName>
+		<finalName>sample</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>

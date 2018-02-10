@@ -3,13 +3,13 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-  <display-name>sdconnexion</display-name>
- <description>sdconnexion</description>
+  <display-name>sample</display-name>
+ <description>sample</description>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>com.sdconnexion.controller.DeploymentListener</listener-class>
+		<listener-class>com.sample.controller.DeploymentListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
@@ -65,7 +65,7 @@
 		<servlet-name>Refresh</servlet-name>
 		<url-pattern>/Refresh</url-pattern>
 	</servlet-mapping>
-	<display-name>sdconnexion</display-name>
+	<display-name>sample</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

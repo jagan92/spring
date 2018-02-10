@@ -11,12 +11,12 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
-	<context:component-scan base-package="com.sdconnexion.controller">
+	<context:component-scan base-package="com.sample.controller">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
-	<context:component-scan base-package="com.sdconnexion.dto">
+	<context:component-scan base-package="com.sample.dto">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Component" />
 	</context:component-scan>

@@ -32,9 +32,9 @@
 
   <beans:bean id="jasyptPBEStringEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
     <beans:property name="algorithm" value="PBEWithMD5AndTripleDES" />
-    <beans:property name="password" value="SdConnexionL" />
+    <beans:property name="password" value="SampleL" />
   </beans:bean>
   
-	<beans:bean id="customLogoutSuccessHandler" class="com.sdconnexion.auditor.CustomLogoutSuccessHandler"></beans:bean>
+	<beans:bean id="customLogoutSuccessHandler" class="com.sample.auditor.CustomLogoutSuccessHandler"></beans:bean>
 
 </beans:beans>

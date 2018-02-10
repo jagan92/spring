@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/views/include.jsp"%>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="SdConnexion">
+<meta name="description" content="sample">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 <title>SD Connexions</title>
 <!-- Bootstrap 3.3.7 -->

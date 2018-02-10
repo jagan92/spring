@@ -2,70 +2,12 @@
 <taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
   version="2.0">
-  <description>sdconnexion Verify Tag Library</description>
+  <description>sample Verify Tag Library</description>
 
   <tlib-version>3.1</tlib-version>
-  <short-name>sdconnexionverify</short-name>
-  <uri>http://www.sdconnexion.com/tags</uri>
+  <short-name>sampleverify</short-name>
+  <uri>http://www.sample.com/tags</uri>
 
-  <tag>
-    <description>Checks whether the user has the capability, against his/her roles</description>
-    <name>hasPermission</name>
-    <tag-class>com.sdconnexion.tags.CapabilityAuthorizationTag</tag-class>
-    <body-content>JSP</body-content>
-    <attribute>
-      <name>capability</name>
-      <required>true</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-    <attribute>
-      <name>action</name>
-      <required>true</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-    <attribute>
-      <name>key</name>
-      <required>false</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-  </tag>
-
-  <tag>
-    <description>Checks whether the user has the role, against his/her roles</description>
-    <name>hasRoleType</name>
-    <tag-class>com.sdconnexion.tags.RoleAuthorizationTag</tag-class>
-    <body-content>JSP</body-content>
-    <attribute>
-      <name>roleType</name>
-      <required>true</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-  </tag>
-
-  <tag>
-    <description>Checks whether the menu should be open or not</description>
-    <name>menu</name>
-    <tag-class>com.sdconnexion.tags.MenuSupportTag</tag-class>
-    <body-content>empty</body-content>
-    <attribute>
-      <name>firstLevel</name>
-      <required>true</required>
-    </attribute>
-  </tag>
-
-  <tag>
-    <description>Checks whether the sub menu should be active or not</description>
-    <name>subMenu</name>
-    <tag-class>com.sdconnexion.tags.SubMenuSupportTag</tag-class>
-    <body-content>empty</body-content>
-    <attribute>
-      <name>firstLevel</name>
-      <required>true</required>
-    </attribute>
-    <attribute>
-      <name>secondLevel</name>
-      <required>true</required>
-    </attribute>
-  </tag>
+  
 
 </taglib>
