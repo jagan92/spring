@@ -31,11 +31,7 @@ public class AccessController {
 	@RequestMapping(value = "/home.htm")
 	public String statusCheck(Principal principal, HttpServletRequest request, HttpSession session,
 			HttpServletResponse response) {
-		String proxyUrl = request.getRequestURL().substring(0, request.getRequestURL().indexOf("home.htm"));
-		session.setAttribute(AppConstants.ATTR_PROXY_URL, proxyUrl);
-		//User user = userService.checkUserStatus(principal.getName(), pref);
-		
-		return "redirect:/dashboard.htm";
-	}
+				
+		return "redirect:/dashboard.htm";	}
 
 }
