@@ -18,30 +18,30 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import com.sample.entity.base.BaseSoftDeletable;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 @AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "user_id")) })
 public class User extends BaseSoftDeletable {
 
 	private static final long serialVersionUID = -4284532910381022091L;
 
-	@Column(name = "email_id", length = 80, nullable = false, unique = true)
+	@Column(name = "email", length = 80, nullable = false, unique = true)
 	private String loginId;
 
 	@Column(name = "password", length = 80)
 	private String password;
 
-	@Column(name = "first_name", length = 40)
+	@Column(name = "name", length = 40)
 	private String firstName;
 
 	@Column(name = "last_name", length = 40)
 	private String lastName;
 
-	@Column(name = "type", length = 20)
-	private Long type;
+	@Column(name = "active", length = 40)
+	private int active;
 
-	@Column(name = "date_lastlogin")
-	private Calendar lastLogin = null;
-
+	@Column(name = "role", length = 40)
+	private String role;
+	
 
 	/********************** hashcode, and equals methods **********************/
 
@@ -93,20 +93,22 @@ public class User extends BaseSoftDeletable {
 		this.lastName = lastName;
 	}
 
-	public Calendar getLastLogin() {
-		return lastLogin;
+	public int getActive() {
+		return active;
 	}
 
-	public void setLastLogin(Calendar lastLogin) {
-		this.lastLogin = lastLogin;
+	public void setActive(int active) {
+		this.active = active;
 	}
 
-	public Long getType() {
-		return type;
+	public String getRole() {
+		return role;
 	}
 
-	public void setType(Long type) {
-		this.type = type;
+	public void setRole(String role) {
+		this.role = role;
 	}
+	
+	
 
 }

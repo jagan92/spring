@@ -2,15 +2,12 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="defaultTemplate">
-		<put-attribute name="title" value=":: SD Collection::" />
+		<put-attribute name="title" value="Admin LTE" />
 		<put-attribute name="body" value="" />
 <!-- 		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp" /> -->
 	</definition>
 	<definition name="dashboardTemplate" template="/WEB-INF/tiles/dashboard-template-new.jsp"
 		extends="defaultTemplate">
-		<put-attribute name="header" value="/WEB-INF/views/header-new.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/views/menu.jsp" />
-		<put-attribute name="breadcrumb" value="/WEB-INF/views/breadcrumb.jsp" />
 		<put-attribute name="customJS" value="" />
 		<put-attribute name="customCss" value="" />
 	</definition>

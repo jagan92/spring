@@ -5,7 +5,7 @@
 <c:set var="url">${pageContext.request.requestURL}</c:set>
 <base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
 <%--<base href="${fn:substring(url, 0, fn:length(url) - fn:length(pageContext.request.requestURI))}${pageContext.request.contextPath}/" /> --%>
-<%@ include file="/WEB-INF/views/include_css.jsp"%>
+
 </head>
 <body class="bg-danger">
   <tiles:insertAttribute name="header" />

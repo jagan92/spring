@@ -21,22 +21,7 @@ public class UserVO extends BaseVO {
 	private String loginId;
 	private String password;
 	private Long roleId;
-	private String rolename;
-	private Long userId;
-	private Long tenantId;
-	private String type;
-
-	private String mobileNumber;
-	private String aadharNumber;
-	private String address;
-	private String city;
-	private String state;
-
-	private String country;
-	private Map<String, String> userTypes = null;
-	private Map<String, String> tenantName = null;
-	private Map<Long, String> userRole = null;
-
+	
 	public UserVO() {
 
 	}
@@ -67,8 +52,8 @@ public class UserVO extends BaseVO {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstName(String name) {
+		this.firstName = name;
 	}
 
 	public String getLastName() {
@@ -101,109 +86,5 @@ public class UserVO extends BaseVO {
 
 	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
-	}
-
-	public String getRolename() {
-		return rolename;
-	}
-
-	public void setRolename(String rolename) {
-		this.rolename = rolename;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public Long getTenantId() {
-		return tenantId;
-	}
-
-	public void setTenantId(Long tenantId) {
-		this.tenantId = tenantId;
-	}
-
-	public String getMobileNumber() {
-		return mobileNumber;
-	}
-
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
-
-	public String getAadharNumber() {
-		return aadharNumber;
-	}
-
-	public void setAadharNumber(String aadharNumber) {
-		this.aadharNumber = aadharNumber;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public Map<String, String> getUserTypes() {
-		return userTypes;
-	}
-
-	public void setUserTypes(Map<String, String> userTypes) {
-		this.userTypes = userTypes;
-	}
-
-	public Map<String, String> getTenantName() {
-		return tenantName;
-	}
-
-	public void setTenantName(Map<String, String> tenantName) {
-		this.tenantName = tenantName;
-	}
-
-	public Map<Long, String> getUserRole() {
-		return userRole;
-	}
-
-	public void setUserRole(Map<Long, String> userRole) {
-		this.userRole = userRole;
 	}
 }

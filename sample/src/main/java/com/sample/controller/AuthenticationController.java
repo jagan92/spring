@@ -3,6 +3,7 @@ package com.sample.controller;
 import com.sample.auditor.AuditorAwareService;
 import com.sample.constants.AppConstants;
 import com.sample.dto.UserVO;
+import com.sample.entity.User;
 import com.sample.logging.LogManager;
 import com.sample.logging.Logger;
 import com.sample.service.UserService;
@@ -31,41 +32,32 @@ public class AuthenticationController {
 	@Autowired
 	HttpSession httpSession;
 
-	private static final Logger LOGGER = LogManager.getLogger();
-	private static final String CLASS_NAME = AuthenticationController.class.getName();
-	private static final String METHOD_FORGOT_PASSWORD = "forgotPassword";
-
 	@RequestMapping(value = "login.htm", method = RequestMethod.GET)
 	public String login(@RequestParam(required = false) String error, ModelMap model,
 			RedirectAttributes redirectAttrs) {
 		if (error != null) {
 			if (error.equals("1")) {
-				redirectAttrs.addFlashAttribute(AppConstants.UI_ERROR, "Invalid User!!");
-				redirectAttrs.addFlashAttribute(AppConstants.UI_ALERT_TITLE, "Login");
 				model.addAttribute(AppConstants.UI_ERROR, error);
 			}
-		}
-		/*
-		 * String ResetMsgLogin = (String)
-		 * httpSession.getAttribute("ResetMsgLogin"); if(ResetMsgLogin != null){
-		 * model.addAttribute("ResetMsgLogin", ResetMsgLogin);
-		 * httpSession.removeAttribute("ResetMsgLogin"); }
-		 */
+		}		
 		return "auth/login";
 	}
-
-	@RequestMapping(value = "forgot.htm", method = RequestMethod.GET)
-	public String forgot(ModelMap model) {
+	
+	@RequestMapping(value = "register.htm", method = RequestMethod.GET)
+	public String register(@RequestParam(required = false) String error, ModelMap model,
+			RedirectAttributes redirectAttrs) {
 		UserVO userVO = new UserVO();
 		model.addAttribute("userVO", userVO);
-		return "auth/reset-password";
+		return "auth/register";
 	}
 	
+	@RequestMapping(value = "register.htm", method = RequestMethod.POST)
+	public String register_post(@ModelAttribute UserVO userVO,
+			RedirectAttributes redirectAttrs) {
+		
+		userService.saveUser(userVO);
+		return "redirect:login.htm";
+	}
 	
 
-	@RequestMapping(value = "resetPassword.htm", method = RequestMethod.POST)
-	public String getNewPassword(@ModelAttribute UserVO userVO, RedirectAttributes redirectAttrs) {
-		
-		return "auth/login";
-	}
 }

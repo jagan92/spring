@@ -10,7 +10,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sample.auditor.AuditorAwareService;
 import com.sample.constants.AppConstants;
@@ -18,20 +20,25 @@ import com.sample.dto.UserPreferences;
 
 @Controller
 public class AccessController {
-	
+
 	@Autowired
 	private AuditorAwareService auditorAwareService;
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private UserPreferences pref;
-	
+
 	@RequestMapping(value = "/home.htm")
 	public String statusCheck(Principal principal, HttpServletRequest request, HttpSession session,
 			HttpServletResponse response) {
-				
-		return "redirect:/dashboard.htm";	}
+		return "redirect:/dashboard.htm";
+	}
+	
+	@RequestMapping(value = "/dashboard.htm", method = RequestMethod.GET)
+	public String dashboard(HttpSession session, ModelMap model) {
+		return "dashboard";
+	}
 
 }

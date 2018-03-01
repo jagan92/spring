@@ -37,25 +37,6 @@ public class BaseEntity implements Auditable<User, Long> {
   @Transient
   private String encryptedId;
 
-  @Version
-  @Column(name = "optlock_version")
-  private Integer optLockVersion;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "created_by", nullable = false)
-  private User createdBy;
-
-  @Temporal(TemporalType.TIMESTAMP)
-  @Column(name = "created_date", nullable = false)
-  private Date createdDate;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "modified_by", nullable = false)
-  private User lastModifiedBy;
-
-  @Temporal(TemporalType.TIMESTAMP)
-  @Column(name = "modified_date", nullable = false)
-  private Date lastModifiedDate;
 
   /********************** hashcode, and equals methods **********************/
 
@@ -108,44 +89,52 @@ public class BaseEntity implements Auditable<User, Long> {
     this.encryptedId = encryptedId;
   }
 
-  public Integer getOptLockVersion() {
-    return optLockVersion;
-  }
+@Override
+public User getCreatedBy() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
-  public void setOptLockVersion(final Integer optLockVersion) {
-    this.optLockVersion = optLockVersion;
-  }
+@Override
+public DateTime getCreatedDate() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
-  public User getCreatedBy() {
-    return createdBy;
-  }
+@Override
+public User getLastModifiedBy() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
-  public void setCreatedBy(final User createdBy) {
-    this.createdBy = createdBy;
-  }
+@Override
+public DateTime getLastModifiedDate() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
-  public DateTime getCreatedDate() {
-    return null == createdDate ? null : new DateTime(createdDate);
-  }
+@Override
+public void setCreatedBy(User arg0) {
+	// TODO Auto-generated method stub
+	
+}
 
-  public void setCreatedDate(final DateTime createdDate) {
-    this.createdDate = null == createdDate ? null : createdDate.toDate();
-  }
+@Override
+public void setCreatedDate(DateTime arg0) {
+	// TODO Auto-generated method stub
+	
+}
 
-  public User getLastModifiedBy() {
-    return lastModifiedBy;
-  }
+@Override
+public void setLastModifiedBy(User arg0) {
+	// TODO Auto-generated method stub
+	
+}
 
-  public void setLastModifiedBy(final User lastModifiedBy) {
-    this.lastModifiedBy = lastModifiedBy;
-  }
-
-  public DateTime getLastModifiedDate() {
-    return null == lastModifiedDate ? null : new DateTime(lastModifiedDate);
-  }
-
-  public void setLastModifiedDate(final DateTime lastModifiedDate) {
-    this.lastModifiedDate = null == lastModifiedDate ? null : lastModifiedDate.toDate();
-  }
+@Override
+public void setLastModifiedDate(DateTime arg0) {
+	// TODO Auto-generated method stub
+	
+}
 
 }

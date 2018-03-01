@@ -83,6 +83,7 @@
 			<version>${junit.version}</version>
 		</dependency>
 
+		
 		<!-- Spring Framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -100,6 +101,13 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
@@ -410,6 +418,12 @@
 			<artifactId>javax.json</artifactId>
 			<version>${javax.json.version}</version>
 		</dependency>
+		
+		
+		
+		
+		
+		
 	</dependencies>
 	<build>
 		<finalName>sample</finalName>

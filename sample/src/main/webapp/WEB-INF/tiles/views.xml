@@ -2,193 +2,32 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
   "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
+
 	<definition name="auth/login" extends="authTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/auth/login.jsp" />
 	</definition>
-	<definition name="auth/reset-password" extends="authTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/auth/reset-password.jsp" />
+	
+	<definition name="auth/register" extends="authTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/auth/register-user.jsp" />
 	</definition>
-
+	
 	<definition name="dashboard" extends="dashboardTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/dashboard.jsp" />
 	</definition>
-	<definition name="header" extends="dashboardTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/header.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/userType.js" />
-		</put-list-attribute>
-
+	
+	<definition name="consultant" extends="dashboardTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/consultant.jsp" />
 	</definition>
-	<definition name="list-items/appLists-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/list-items/appLists-list.jsp" />
+	
+	<definition name="consultantlist" extends="dashboardTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/consultant-list.jsp" />
 	</definition>
-	<definition name="list-items/appList-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/list-items/appList-edit.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/appList-edit.js" />
-		</put-list-attribute>
+	
+	<definition name="hr_pay" extends="dashboardTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/hr_pay.jsp" />
 	</definition>
-	<definition name="list-items/appItem-edit" extends="ajaxTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/list-items/appItem-edit.jsp" />
+	
+	<definition name="hr" extends="dashboardTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/hr.jsp" />
 	</definition>
-	<definition name="list-items/appItems-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/list-items/appItems-list.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/appList-edit.js" />
-		</put-list-attribute>
-	</definition>
-	<definition name="list-items/appSubItems-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/list-items/appSubItems-list.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/appList-edit.js" />
-		</put-list-attribute>
-	</definition>
-	<definition name="list-items/appSubItem-edit" extends="ajaxTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/list-items/appSubItem-edit.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/appList-edit.js" />
-		</put-list-attribute>
-	</definition>
-	<definition name="roles-permissions/role-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/roles-permissions/role-edit.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/userRole.js" />
-			<add-attribute value="resources/js/page/role.js" />
-		</put-list-attribute>
-	</definition>
-	<definition name="roles-permissions/roles-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/roles-permissions/roles-list.jsp" />
-	</definition>
-	<definition name="roles-permissions/permissions-list"
-		extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/roles-permissions/permissions-list.jsp" />
-	</definition>
-	<definition name="capability/capabilities-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/capability/capabilities-list.jsp" />
-	</definition>
-	<definition name="capability/capability-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/capability/capability-edit.jsp" />
-	</definition>
-	<definition name="user/user-edit" extends="dashboardTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/user/user-edit.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/userType.js" />
-			<add-attribute value="resources/js/page/userRole.js" />
-		</put-list-attribute>
-	</definition>
-	<definition name="user/users-list" extends="dashboardTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/user/users-list.jsp" />
-		<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/userType.js" />
-		</put-list-attribute>
-	</definition>
-	<definition name="user/user-profile" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/user/user-profile.jsp" />
-	</definition>
-	<definition name="tenant/tenants-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/tenant/tenants-list.jsp" />
-	</definition>
-	<definition name="tenant/tenant-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/tenant/tenant-edit.jsp" />
-	</definition>
-	<definition name="email-queue/emailQueue-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/email-queue/emailQueue-edit.jsp" />
-	</definition>
-	<definition name="email-queue/emailQueue-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/email-queue/emailQueue-list.jsp" />
-	</definition>
-	<definition name="division/division-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/division/division-list.jsp" />
-	</definition>
-	<definition name="division/division-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/division/division-edit.jsp" />
-	</definition>
-	<definition name="team/team-list" extends="dashboardTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/team/team-list.jsp" />
-	</definition>
-	<definition name="team/team-edit" extends="dashboardTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/team/team-edit.jsp" />
-	</definition>
-	<definition name="pupil/tenantList" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/pupil/tenantList.jsp" />
-	</definition><definition name="pupil/pupilRecord-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/pupil/pupilRecord-edit.jsp" />
-	</definition>
-	<definition name="pupil/pupilRecord-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/pupil/pupilRecord-edit.jsp" />
-	</definition>
-	<definition name="pupil/pupilRecord-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/pupil/pupilRecord-list.jsp" />
-	</definition>
-	<definition name="pupil/pupilDetails-list" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/pupil/pupilDetails-list.jsp" />
-	</definition>
-	<definition name="pupil/pupilDetails-edit" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/pupil/pupilDetails-edit.jsp" />
-	</definition>
-	<definition name="order/orderCode" extends="dashboardTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/order/orderCode.jsp" />
-	</definition>
-	<definition name="order/orderCodeList" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/order/orderCodeList.jsp" />
-		
-	</definition>
-	<definition name="order/orderStatus" extends="ajaxTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/order/orderStatus.jsp" />
-	</definition>
-	<definition name="order/orderStatusList" extends="dashboardTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/order/orderStatusList.jsp" />
-			<put-list-attribute name="customJS">
-			<add-attribute value="resources/js/page/orderStatus.js" />
-		</put-list-attribute>
-	</definition>
-
-
-
-	<definition name="error/403" extends="errorTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/error/403.jsp" />
-	</definition>
-	<definition name="error/404" extends="errorTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/error/404.jsp" />
-	</definition>
-	<definition name="error/500" extends="errorTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/error/500.jsp" />
-	</definition>
-	<definition name="error/timeout" extends="errorTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/error/timout.jsp" />
-	</definition>
-
-	<!-- <definition name="user/userType" extends="ajaxTemplate"> <put-attribute 
-		name="body" value="/WEB-INF/views/user/userType.jsp" /> <put-list-attribute 
-		name="customJS"> <add-attribute value="resources/js/page/userRole.js" /> 
-		</put-list-attribute> </definition> -->
-
 </tiles-definitions>

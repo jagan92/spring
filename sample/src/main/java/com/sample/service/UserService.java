@@ -1,9 +1,9 @@
 package com.sample.service;
 
-import org.springframework.stereotype.Service;
+import com.sample.dto.UserVO;
+import com.sample.entity.User;
 
-@Service
 public interface UserService {
-	
-	
+	public User findUserByEmail(String email);
+	public void saveUser(UserVO userVO);
 }
