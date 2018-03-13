@@ -18,6 +18,7 @@
 	                  <th>Action</th>
 	                  <th>Remove</th>
 	                </tr>
+	                
 	                <c:forEach items="${consultantVOs}" var="consultant"  >
                 		<tr>
 		                  <td>TWC ${consultant.id}</td>
