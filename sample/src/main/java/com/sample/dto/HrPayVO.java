@@ -10,12 +10,16 @@ public class HrPayVO {
 	private String rate_per;
 	private String hour_day;
 	private String day;
-	private int salary;
+	private String salary;
 	private Long trans_id;
 	private String trans_date;
 	private String take_home;
-
-
+	private String no_hours;
+	private String no_days;
+	private String tds;
+	private String gross;
+	private char is_paid = 'N';
+	
 	public Long getConsultantId() {
 		return consultantId;
 	}
@@ -49,11 +53,11 @@ public class HrPayVO {
 	}
 	
 	
-	public int getsalary() {
+	public String getsalary() {
 		return salary;
 	}
 
-	public void setsalary(int salary) {
+	public void setsalary(String salary) {
 		this.salary = salary;
 	}
 	
@@ -114,13 +118,47 @@ public class HrPayVO {
 		this.take_home = take_home;
 	}
 	
+	public String getno_hours() {
+		return no_hours;
+	}
+
+	public void setno_hours(String no_hours) {
+		this.no_hours = no_hours;
+	}
+	
+	
+	public String getno_days() {
+		return no_days;
+	}
+
+	public void setno_days(String no_days) {
+		this.no_days = no_days;
+	}
+	
+	public String gettds() {
+		return tds;
+	}
+
+	public void settds(String tds) {
+		this.tds = tds;
+	}
 	
 	
 	
+	public char getis_paid() {
+		return is_paid;
+	}
+
+	public void setis_paid(char is_paid) {
+		this.is_paid = is_paid;
+	}
 	
-	
-	
-	
-	
+	public String getgross() {
+		return gross;
+	}
+
+	public void setgross(String gross) {
+		this.gross = gross;
+	}
 	
 }

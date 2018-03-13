@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
 import com.sample.dto.ConsultantVO;
 import com.sample.dto.HrPayVO;
 import com.sample.dto.TransVO;
@@ -105,7 +106,7 @@ public class UserController {
 			hrPayVO.setsalary(consultantVO.getSalary());
 
 		}
-		consultantService.mailConsultant(consultantId);
+		consultantService.mailConsultant(consultantId, null);
 		model.addAttribute("consultantVOs", consultantVOs);
 		model.addAttribute("hrPayVO", hrPayVO);
 		return "redirect:hr_pay.htm?consultantId=" + consultantId;
@@ -120,11 +121,12 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/hr.htm", method = RequestMethod.GET)
-	public String hr_consultant(@RequestParam(required = false) Long consultantId, ModelMap model) {
+	public String hr_consultant(@RequestParam(required = false)Long consultantId,String trans_date, ModelMap model) {
+		Trans trans = transService.getTrans(consultantId, trans_date);
 		ConsultantVO consultantVO = new ConsultantVO();
 		if (consultantId != null) {
 			consultantVO = consultantService.getConsultantVO(consultantId);
-			consultantService.mailConsultant(consultantId);
+			consultantService.mailConsultant(consultantId,trans_date);
 		}
 		model.addAttribute("consultantVO", consultantVO);
 		return "hr";
@@ -139,7 +141,7 @@ public class UserController {
 	@RequestMapping(value = "/hrmail.htm", method = RequestMethod.GET)
 	public String mail(@RequestParam(required = false) Long consultantId, ModelMap model) {
 
-		consultantService.mailConsultant(consultantId);
+		consultantService.mailConsultant(consultantId,null);
 
 		return "hr_pay";
 	}
@@ -155,4 +157,25 @@ public class UserController {
 		return lsReturn;
 	}
 
+	@RequestMapping(value = "/getTransDetail.htm", headers="Accept=*/*", produces = "application/json", method = RequestMethod.GET)
+	public @ResponseBody String getTransDetails(@RequestParam Long consultantId, @RequestParam String date, ModelMap model) {
+		String lsReturn = "false";
+		Trans trans = transService.getTrans(consultantId, date);
+		Object obj = (Object) trans;
+		Gson gson = new Gson();
+		String returnJson = gson.toJson(obj);
+		return returnJson;
+	}
+
+	@RequestMapping(value = "/updatePaid.htm", headers="Accept=*/*", produces = "application/json", method = RequestMethod.GET)
+	public @ResponseBody String updatePaid(@RequestParam Long consultantId, @RequestParam String date, ModelMap model) {
+		String lsReturn = "false";
+		boolean isSave = transService.updateTrans(consultantId, date);
+		lsReturn = (isSave) ? "true":"false";
+		
+		consultantService.mailConsultant1(consultantId,date);
+		return lsReturn;
+		
+	}
+	
 }

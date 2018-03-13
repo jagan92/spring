@@ -21,15 +21,15 @@ public class ConsultantVO {
 	private String add_pin;
 	private String add_country;
 	private String ph_number;
-	private int alter_ph_number;
-	private int aadhar_number;
-	private int pan_number;
+	private String alter_ph_number;
+	private String aadhar_number;
+	private String pan_number;
 	private String rate_per;
-	private int salary;
+	private String salary;
 	private String bank_name;
 	private String ac_holder_name;
-	private int acc_number;
-	private int ifsc_code;
+	private String acc_number;
+	private String ifsc_code;
 	private String branch;
 	private String skill;
 	private String client;
@@ -54,6 +54,7 @@ public class ConsultantVO {
 
 	public Long getId() {
 		return id;
+		
 	}
 
 	public void setId(Long id) {
@@ -172,27 +173,27 @@ public class ConsultantVO {
 		this.ph_number = ph_number;
 	}
 
-	public int getAlter_ph_number() {
+	public String getAlter_ph_number() {
 		return alter_ph_number;
 	}
 
-	public void setAlter_ph_number(int alter_ph_number) {
+	public void setAlter_ph_number(String alter_ph_number) {
 		this.alter_ph_number = alter_ph_number;
 	}
 
-	public int getAadhar_number() {
+	public String getAadhar_number() {
 		return aadhar_number;
 	}
 
-	public void setAadhar_number(int aadhar_number) {
+	public void setAadhar_number(String aadhar_number) {
 		this.aadhar_number = aadhar_number;
 	}
 
-	public int getPan_number() {
+	public String getPan_number() {
 		return pan_number;
 	}
 
-	public void setPan_number(int pan_number) {
+	public void setPan_number(String pan_number) {
 		this.pan_number = pan_number;
 	}
 
@@ -204,11 +205,11 @@ public class ConsultantVO {
 		this.rate_per = rate_per;
 	}
 
-	public int getSalary() {
+	public String getSalary() {
 		return salary;
 	}
 
-	public void setSalary(int salary) {
+	public void setSalary(String salary) {
 		this.salary = salary;
 	}
 
@@ -228,19 +229,19 @@ public class ConsultantVO {
 		this.ac_holder_name = ac_holder_name;
 	}
 
-	public int getAcc_number() {
+	public String getAcc_number() {
 		return acc_number;
 	}
 
-	public void setAcc_number(int acc_number) {
+	public void setAcc_number(String acc_number) {
 		this.acc_number = acc_number;
 	}
 
-	public int getIfsc_code() {
+	public String getIfsc_code() {
 		return ifsc_code;
 	}
 
-	public void setIfsc_code(int ifsc_code) {
+	public void setIfsc_code(String ifsc_code) {
 		this.ifsc_code = ifsc_code;
 	}
 

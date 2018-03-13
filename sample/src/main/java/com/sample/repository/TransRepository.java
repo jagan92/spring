@@ -12,4 +12,7 @@ public interface TransRepository extends JpaRepository<Trans, Long> {
 	@Query("select t from Trans t where t.consultantId=?1 and t.trans_date=?2")
 	public List<Trans> getDataByDate(String consultantId, String strDate);
 	
+	@Query("select t from Trans t where t.consultantId=?1 and t.trans_date=?2")
+	public Trans getDataByDate1(String consultantId, String strDate);
+	 
 }

@@ -7,6 +7,10 @@ public class TransVO {
 	private String first_name;
 	private String trans_date;
 	private String take_home;
+	private String no_hours;
+	private String no_days;
+	private String tds;
+	private String gross;
 
 	
 	public Long getConsultantId() {
@@ -50,8 +54,37 @@ public class TransVO {
 	}
 	
 	
+	public String getno_hours() {
+		return no_hours;
+	}
+
+	public void setno_hours(String no_hours) {
+		this.no_hours = no_hours;
+	}
+	
+	public String getno_days() {
+		return no_days;
+	}
+
+	public void setno_days(String no_days) {
+		this.no_days = no_days;
+	}
 	
 	
+	public String gettds() {
+		return tds;
+	}
+
+	public void settds(String tds) {
+		this.tds = tds;
+	}
 	
+	public String getgross() {
+		return gross;
+	}
+
+	public void setgross(String gross) {
+		this.gross = gross;
+	}
 	
 }

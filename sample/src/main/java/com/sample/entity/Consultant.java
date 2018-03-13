@@ -208,35 +208,35 @@ public class Consultant {
 	
 	
 @Column(name = "aadhar_number")
-	private int aadhar_number;
+	private String aadhar_number;
 	
-	public int getaadhar_number() {
+	public String getaadhar_number() {
 		return aadhar_number;
 	}
 
-	public void setaadhar_number(int aadhar_number) {
+	public void setaadhar_number(String aadhar_number) {
 		this.aadhar_number = aadhar_number;
 	}
 	
 	@Column(name = "pan_number")
-	private int pan_number;
+	private String pan_number;
 	
-	public int getpan_number() {
+	public String getpan_number() {
 		return pan_number;
 	}
 
-	public void setpan_number(int pan_number) {
+	public void setpan_number(String pan_number) {
 		this.pan_number = pan_number;
 	}
 	
 /*	@Column(name = "day")
-	private int day;
+	private String day;
 	
-	public int getday() {
+	public String getday() {
 		return day;
 	}
 
-	public void setday(int day) {
+	public void setday(String day) {
 		this.day = day;
 	}*/
 	
@@ -254,13 +254,13 @@ public class Consultant {
 	}
 	
 	@Column(name = "salary")
-	private int salary;
+	private String salary;
 	
-	public int getsalary() {
+	public String getsalary() {
 		return salary;
 	}
 
-	public void setsalary(int salary) {
+	public void setsalary(String salary) {
 		this.salary = salary;
 	}
 	
@@ -290,13 +290,13 @@ public class Consultant {
 	
 	
 	@Column(name = "acc_number")
-	private int acc_number;
+	private String acc_number;
 	
-	public int getacc_number() {
+	public String getacc_number() {
 		return acc_number;
 	}
 
-	public void setacc_number(int acc_number) {
+	public void setacc_number(String acc_number) {
 		this.acc_number = acc_number;
 	}
 	
@@ -304,13 +304,13 @@ public class Consultant {
 	
 	
 	@Column(name = "ifsc_code")
-	private int ifsc_code;
+	private String ifsc_code;
 	
-	public int getifsc_code() {
+	public String getifsc_code() {
 		return ifsc_code;
 	}
 
-	public void setifsc_code(int ifsc_code) {
+	public void setifsc_code(String ifsc_code) {
 		this.ifsc_code = ifsc_code;
 	}
 	

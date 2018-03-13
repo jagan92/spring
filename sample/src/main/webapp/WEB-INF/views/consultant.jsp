@@ -15,13 +15,29 @@
 					<div class="box-body">
 						<c:if test="${consultantVO.id != null}">
 							<div class="row">
+							<div class="col-md-12">
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="exampleInputEmail1">Consultant ID</label> <input
 											type="text" class="form-control"
-											value="TWE${consultantVO.id}" placeholder="First Name"
+											value="TWC${consultantVO.id}" placeholder="First Name"
 											disabled="disabled" />
 									</div>
+								</div>
+								
+						<!-- 			<div class="col-md-3"  >
+					
+						<button type="button"    class="btn btn-success"    style="margin-bottom:  -18%"    >Activate</button>
+				
+					</div>
+						<div class="col-md-3" >
+					
+						<button type="button"    class="btn btn-danger"   style="margin-left: -87%;margin-bottom: -18%"  >Deactivate</button>
+				
+					</div> -->
+								
+								
+								
 								</div>
 							</div>
 
@@ -109,21 +125,21 @@
 								<div class="form-group">
 									<label for="exampleInputEmail1">Street</label>
 									<form:input type="text" class="form-control" path="add_street"
-										placeholder="First Name" />
+										placeholder="street" />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Lane</label>
 									<form:input type="text" class="form-control" path="add_lane"
-										placeholder="First Name" />
+										placeholder="lane" />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">City</label>
 									<form:input type="text" class="form-control" path="add_city"
-										placeholder="First Name" />
+										placeholder="city" />
 								</div>
 							</div>
 							
@@ -141,29 +157,29 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Pin</label>
-									<form:input type="number" class="form-control" path="add_pin"
-										placeholder="First Name" />
+									<form:input type="text" class="form-control" path="add_pin"
+										placeholder="Pin number" />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Country</label>
 									<form:input type="text" class="form-control" path="add_country"
-										placeholder="First Name" />
+										placeholder="country" />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Phone Number</label>
-									<form:input type="text" class="form-control" path="ph_number"
-										placeholder="First Name" />
+									<form:input type="text" class="form-control" path="ph_number" 
+										placeholder="phone number" />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Alternate Phone Number</label>
 									<form:input type="text" class="form-control"
-										path="alter_ph_number" placeholder="First Name" />
+										path="alter_ph_number" placeholder="alternate Phone Number" />
 								</div>
 							</div>
 						</div>
@@ -183,7 +199,7 @@
 								<div class="form-group">
 									<label for="exampleInputEmail1">Aadhar Number</label>
 									<form:input type="text" class="form-control"
-										path="aadhar_number" placeholder="First Name" />
+										path="aadhar_number" placeholder="aadhar Number" />
 								</div>
 							</div>
 
@@ -206,6 +222,13 @@
 
 
 							<div class="col-md-12" style="padding:0;">
+							
+							
+							
+							<c:choose>
+							  <c:when test = "${consultantVO.id != null}">
+							
+						
 								<div class="col-md-4">
 									<div class="form-group">
 										<label class="form-label form-label-top" id="label_38"
@@ -213,19 +236,57 @@
 										
 										
 										<form:select path="rate_per" style="width:50%;" onchange="funcChangeRatePer(this)">
-									        <form:option value="Event_Name" label="RATE PER"/>
+									        <form:option value="${consultantVO.rate_per}" label="${consultantVO.rate_per}"/>
 									        <option value="Hour">Hour</option>
 									       
 									       <option value="Day">Day</option>
 									    </form:select>
+									   
 										
-										
+											<%-- value="TWE${consultantVO.id}" placeholder="First Name" --%>
 										
 										
 									</div>
 								</div>
 								
+								</c:when>
 								
+								
+							
+							
+							<c:otherwise>
+           
+								
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="form-label form-label-top" id="label_38"
+											for="input_38"> Rate Per </label>
+										
+										
+										<form:select path="rate_per" style="width:50%;" onchange="funcChangeRatePer(this)">
+									        <form:option value="--Select--" label="select"/>
+									        <option value="Hour">Hour</option>
+									       
+									       <option value="Day">Day</option>
+									    </form:select>
+									   
+										
+											<%-- value="TWE${consultantVO.id}" placeholder="First Name" --%>
+										
+										
+									</div>
+								</div>
+								
+         </c:otherwise>
+							
+							
+							
+							
+								 </c:choose>
+								 
+								 
+								 
+								 
 								
 							
 								
@@ -266,21 +327,21 @@
 								<div class="form-group">
 									<label for="exampleInputEmail1">Account Holder Name</label>
 									<form:input type="text" class="form-control"
-										path="ac_holder_name" placeholder="First Name" />
+										path="ac_holder_name" placeholder="Account holder name" />
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Bank Name</label>
 									<form:input type="text" class="form-control" path="bank_name"
-										placeholder="First Name" />
+										placeholder="bank Name" />
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Branch Name</label>
 									<form:input type="text" class="form-control" path="branch"
-										placeholder="First Name" />
+										placeholder="branch Name" />
 								</div>
 							</div>
 							</div>
@@ -288,16 +349,16 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Account Number</label>
-									<form:input type="number" class="form-control"
-										path="acc_number" placeholder="First Name" />
+									<form:input type="text" class="form-control"
+										path="acc_number" placeholder="account number" />
 								</div>
 							</div>
 
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="exampleInputEmail1">IFSC Code</label>
-									<form:input type="number" class="form-control" path="ifsc_code"
-										placeholder="First Name" />
+									<form:input type="text" class="form-control" path="ifsc_code"
+										placeholder="IFSC code" />
 								</div>
 							</div>
 
@@ -316,38 +377,51 @@
 								<div class="form-group">
 									<label for="exampleInputEmail1">Skill</label>
 									<form:input type="text" class="form-control" path="skill"
-										placeholder="First Name" />
+										 />
 								</div>
 							</div>
 							<div class="col-md-3" style="padding: 2">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Client</label>
 									<form:input type="text" class="form-control" path="client"
-										placeholder="First Name" />
+										 />
 								</div>
 							</div>
 							<div class="col-md-3" style="padding: 2">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Vendor</label>
 									<form:input type="text" class="form-control" path="vendor"
-										placeholder="First Name" />
+										 />
 								</div>
 							</div>
 							<div class="col-md-3" style="padding: 2">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Location</label>
 									<form:input type="text" class="form-control" path="location"
-										placeholder="location" />
+										 />
 								</div>
 							</div>
                        </div>
 										
 					</div>
 					<!-- /.box-body --> 
-
 					<div class="box-footer">
+<div class="col-md-12" style="padding: 2">
+<div class="col-md-3" >
+					
 						<button type="submit"   onclick="return confirm('Are you sure want to save?')" class="btn btn-success">Save</button>
+					
 					</div>
+				
+					<div class="col-md-3" >
+					
+						<button type="button"   onclick="funcback()" class="btn btn-success" style=" margin-left: -76%"      >Back</button>
+				
+					</div>
+					</div>
+					</div>
+				
+			
 				</form:form>
 			</div>
 		</div>
@@ -367,4 +441,12 @@ function funcChangeRatePer(elem){
 		$("#id_day").prop('disabled', true);
 	}
 }
+
+
+
+function funcback(){
+	
+	location.href="dashboard.htm";   
+}
+
 </script>

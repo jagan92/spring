@@ -12,7 +12,8 @@ public interface ConsultantService {
 	public ConsultantVO getConsultantVO(Long consultant);
 	public List<ConsultantVO> getAllConsultant();
 	void deleteConsultant(Long consultantId);
-	void mailConsultant(Long consultantId);
+	void mailConsultant(Long consultantId, String trans_date);
+	void mailConsultant1(Long consultantId, String trans_date);
 }
 
 
